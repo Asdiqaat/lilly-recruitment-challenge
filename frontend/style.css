@@ -1,5 +1,7 @@
 /* ---- Global styles ---- */
-
+:root{
+    --text-light:#ffff;
+}
 /* CSS Reset */
 * {
     box-sizing: border-box;
@@ -30,3 +32,148 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+#list-medicines, #add-medicine, #search-medicine {
+    background-color: rgb(117, 14, 14);
+    color: rgb(255, 255, 255);
+    padding: 10px 90px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;  
+    font-size: 18px; 
+}
+
+.button-container {
+    display: flex;              
+    justify-content: center;   
+    gap: 20px;              
+    margin-bottom: 20px;   
+}
+
+#list-medicines:hover, #add-medicine:hover, #search-medicine:hover{
+    background-color: black;
+}
+
+#medicine-container{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.medicine-item{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap:13px;
+    background-color: hsl(0, 7%, 71%);
+    padding: 12px;
+    margin: 10px 0;
+    border-left:5px solid #333;
+    border-top:5px solid #333 ;
+    border-radius: 6px;
+}
+
+.med-name{
+    font-weight: bold;
+}
+.med-price{
+    font-weight: bold;
+    color: #000000;
+}
+
+.empty-med-name, .empty-med-price{
+    color: rgb(121, 14, 14);
+}
+
+.missing-info-box {
+    background-color: #ffdddd;
+    color: #a10000;
+    padding: 8px;
+    border: 1px solid #a10000;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#form-container{
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center; 
+    padding: 30px;
+    margin: 20px auto;
+    width: 400px;            
+    background-color: #f0f0f0; 
+    border: 2px solid #333;  
+    border-radius: 10px;    
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+}
+
+#medicine-name, #medicine-price{
+    width: 80%;               
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #888;  
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;  
+    color: #000;
+}
+
+#med-name-label, #med-price-label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#add-button{
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #75100e;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-button:hover{
+    background-color: #000;
+}
+
+.hidden{
+    display: none;
+}
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#search-name {
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    width: 200px;
+}
+
+#search-button {
+    padding: 10px 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(117, 14, 14);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: black;
+}
