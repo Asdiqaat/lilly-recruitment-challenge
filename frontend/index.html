@@ -15,34 +15,30 @@
     </header>
 
     <main>
-        <div class="button-container">
-            <button id="list-medicines" class="button">List all the medicines</button>
+        <!-- Search Medicine -->
+        <section id="search-container">
+            <input id="search-name" type="text" placeholder="Enter Medicine name">
+            <button id="search-button">Search</button>
+        </section>
+        
+        <!-- Medicines List -->
+        <section id="medicine-container"></section>
 
-            <button id="add-medicine" class="button">Add Medicine</button>
+        <!-- Add Medicine Form -->
+         <h2 id="med-h2">Add medicine</h2>
+        <section id="form-container">
+            <label id="med-name-label">Name</label>
+            <input id="medicine-name" type="text" placeholder="Medicine name"><br><br>
 
-            <button id="search-medicine" class="button">Search Medicine</button>
+            <label id="med-price-label">Price</label>
+            <input id="medicine-price" type="text" placeholder="Medicine price"><br><br>
 
-            
+            <button id="add-button" class="button">Add Medicine</button>
+        </section>
 
-    </div>
-
-    <section id="medicine-container"></section>
-    <section id="form-container" hidden>
-        <br>
-        <label id="med-name-label">Name</label>
-        <input id="medicine-name" type="text" placeholder="Medicine name"></input> <br><br>
-    
-        <label id="med-price-label">Price</label>
-        <input id="medicine-price" type="text" placeholder="Medicine price"></input> <br><br>
-        <button id="add-button" class="button">Add Medicine</button>
-    </section>
-
-    <section id="search-container" hidden>
-        <input id="search-name" type="text" placeholder="Enter Medicine name">
-        <button id="search-button">Search</button>
-    </section>
-
+        
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>

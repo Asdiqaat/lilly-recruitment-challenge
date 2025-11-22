@@ -1,17 +1,57 @@
-# Lilly Technical Challenge Documentation Template
+# Lilly Technical Challenge - Documentation
 
-*This documentation template serves as a place for you to discuss how you approached this challenge, any issues you faced & how you overcame them, or any other points that you feel would be relevant for the interviewers to know. The text in italics is here to guide you - feel free to remove it once you fill out each section!*
+## Approach  
+- Planned the steps before starting to avoid getting lost.  
+- Tested backend endpoints using **Postman** to understand data structure.  
+- Built the frontend using `fetch()` to display `/medicines` on page load.  
+- Created input forms for adding medicines with validation.  
+- Tested each feature step-by-step to ensure stability.  
+- Displayed all sections (medicine list, add form, search) at once for easy access.  
 
-***Not every section in this document is required. This is just a template to help get you started. Feel free to add or remove sections as you feel necessary.***
+## Objectives  
 
-## Approach
-*How did you approach this challenge? Did you work through the objectives in any particular order? If so, why? Did you utilize any external resources, such as tutorials, guides, or other materials?*
+**1. Fetch data from backend and display it user-friendly**  
+- Used `fetch()` to pull data from `/medicines` and `/medicines/{name}`.  
+- Displayed each medicine as a card with name, price, and warning if any info was missing.  
+- Centered cards on the page.  
 
-## Objectives - Innovative Solutions
-*For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about.*
+**2. Handle missing/invalid data without crashing**  
+- Empty names → displayed as `"Unknown"`.  
+- Missing prices → displayed as `"N/A"`.  
+- Added visual warning boxes on cards when data is incomplete.  
+- Checked for undefined or null values before rendering.  
 
-## Problems Faced
-*Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)*.
+**3. User-friendly data input**  
+- Form to input medicine name and price.  
+- Front-end validation: name must not be empty; price must be a positive number.  
+- Submits data to backend POST `/create` endpoint.  
+- Medicine list updates automatically after adding a new entry.  
 
-## Evaluation
-*How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?*
+**4. Improve overall design and UX**  
+- Centered cards, form, and search bar for clean layout.  
+- Added hover effects on buttons and cards for better visual feedback.  
+- Colored warnings for missing data.  
+- Search bar lets users find a medicine by name and shows “not found” messages.  
+
+## Problems / Challenges  
+- Medicines not displaying initially → fixed by properly creating container and appending elements.  
+- Validation wasn’t strict at first → added checks to prevent empty or invalid entries.  
+- Styling and layout required trial and error to center and align cards/form/search bar.  
+
+## Evaluation  
+- Enjoyed building a full-stack workflow from scratch.  
+- Learned to handle missing data gracefully and connect frontend to backend.  
+- Debugging display issues and adding validation took the most time.  
+
+## Future Improvements  
+- Implement **update and delete functionality** for full CRUD.  
+- Add a **search filter** for faster access to medicines.  
+- Include **pagination** for easier viewing with large datasets.  
+- Use a proper database (like SQLite/PostgreSQL) instead of JSON.  
+- Improve form validation further (regex for names, etc.).  
+- Polish UI with animations and better responsive layout.  
+
+## Bonus / Extra  
+- Live updates after adding new medicine.  
+- Search bar shows immediate results.  
+- Visual highlights for missing data.  
