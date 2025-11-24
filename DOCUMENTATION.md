@@ -55,3 +55,9 @@
 - Live updates after adding new medicine.  
 - Search bar shows immediate results.  
 - Visual highlights for missing data.  
+
+
+## Notes 
+- json: lightweight text based structure that allows data to be gathered and transferred between the server and web application
+- data.json: lightweight text based structure that allows information to be read by humans and for the computers to be parsed.
+- Endpoints: any device can connect to a network and exchange information

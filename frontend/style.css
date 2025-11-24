@@ -97,14 +97,14 @@ header h1 {
 }
 
 /* Add Medicine Form */
-#form-container {
+#form-container, #form-container-delete, #form-container-update {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 30px;
     margin: 20px auto;
-    width: 400px;
+    width: 800px;
     background-color: #f0f0f0;
     border: 2px solid #333;
     border-radius: 10px;
@@ -112,7 +112,7 @@ header h1 {
 }
 
 #medicine-name,
-#medicine-price {
+#medicine-price, #medicine-name-delete, #medicine-name-update, #medicine-price-update {
     width: 80%;
     padding: 15px;
     margin: 10px 0;
@@ -124,7 +124,7 @@ header h1 {
 }
 
 #med-name-label,
-#med-price-label {
+#med-price-label, #med-delete-name-label, #med-update-name-label, #med-price-label-update {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
@@ -132,18 +132,28 @@ header h1 {
     width: 80%;
 }
 
-#add-button {
+#add-button, #delete-button, #update-button {
     margin-top: 20px;
     padding: 12px 30px;
     border: none;
     border-radius: 8px;
-    background-color: #75100e;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
 }
+#add-button{
+    background-color: #375508;
+}
 
-#add-button:hover {
+#delete-button{
+    background-color: #0e1d75;
+}
+
+#update-button{
+    background-color: #5f3f07;
+}
+
+#add-button:hover, #delete-button:hover, #update-button:hover {
     background-color: black;
 }
 
@@ -181,10 +191,19 @@ header h1 {
 }
 
 /* Add Medicine heading */
-#med-h2 {
+#med-h2, #med-delete-h2, #med-update-h2 {
     text-align: center;      
     margin-top: 40px;        
     margin-bottom: 20px;     
-    font-size: 24px;        
-    color: #75100e;         
+    font-size: 24px;          
+}
+
+#med-h2{
+    color: #375508;
+}
+#med-delete-h2{
+    color: #0e1d75;
+}
+#med-update-h2{
+    color: 5f3f07;
 }

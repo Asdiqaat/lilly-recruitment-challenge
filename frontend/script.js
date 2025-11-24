@@ -137,3 +137,55 @@ searchButton.addEventListener("click", async () => {
         console.error("Error searching medicine:", error);
     }
 });
+
+
+//DELETE
+document.getElementById('form-container-delete').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const deleteName = document.getElementById('medicine-name-delete').value.trim();
+    try{
+        const response = await fetch('http://127.0.0.1:8000/delete', {
+            method : 'DELETE',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body : `name=${encodeURIComponent(deleteName)}`
+        });
+
+        const results = await response.json(); 
+        alert(results.message || results.error || "Unknown response");
+        
+        renderMedicines();
+        e.target.reset();
+    } catch (err){
+        console.error(err)
+        alert("Error deleting data")
+    }
+});
+
+//Update
+document.getElementById('form-container-update').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const updateName = document.getElementById('medicine-name-update').value.trim();
+    const updatePrice = document.getElementById('medicine-price-update').value.trim();
+    try{
+        const response = await fetch('http://127.0.0.1:8000/update', {
+            method : 'POST',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body : `name=${encodeURIComponent(updateName)}&price=${encodeURIComponent(updatePrice)}`
+        });
+
+
+        const results = await response.json(); 
+        alert(results.message || results.error);
+        renderMedicines();
+        e.target.reset();
+    } catch (err){
+        console.error(err)
+        alert("Error updating data")
+    }
+});
