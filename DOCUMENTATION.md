@@ -1,63 +1,78 @@
 # Lilly Technical Challenge - Documentation
 
 ## Approach  
-- Planned the steps before starting to avoid getting lost.  
-- Tested backend endpoints using **Postman** to understand data structure.  
-- Built the frontend using `fetch()` to display `/medicines` on page load.  
-- Created input forms for adding medicines with validation.  
-- Tested each feature step-by-step to ensure stability.  
-- Displayed all sections (medicine list, add form, search) at once for easy access.  
+- Planned the project step-by-step before starting to avoid getting lost.  
+- Started by setting up the **FastAPI backend**, so endpoints were ready for testing the frontend.  
+- Tested backend endpoints using **Postman** to confirm data structure and response formats.  
+- Built the frontend using `fetch()` to display `/medicines` dynamically on page load.  
+- Created forms for adding medicines with basic validation.  
+- Added extra features: delete, update, and search functionality for medicines.  
+- Tested each feature step-by-step to ensure stability and proper UI updates.  
+- Displayed all sections (medicine list, add form, update, delete, search) in a single interface for easy access.  
 
 ## Objectives  
 
 **1. Fetch data from backend and display it user-friendly**  
-- Used `fetch()` to pull data from `/medicines` and `/medicines/{name}`.  
-- Displayed each medicine as a card with name, price, and warning if any info was missing.  
-- Centered cards on the page.  
-
-**2. Handle missing/invalid data without crashing**  
+- Used `fetch()` to retrieve data from `/medicines` endpoint.  
+- Rendered each medicine as a card showing **name** and **price**.  
 - Empty names → displayed as `"Unknown"`.  
 - Missing prices → displayed as `"N/A"`.  
-- Added visual warning boxes on cards when data is incomplete.  
-- Checked for undefined or null values before rendering.  
+- Cards with missing information have a visible warning.  
+- Centered the medicine cards and ensured spacing between cards for readability.  
+
+**2. Handle missing/invalid data without crashing**  
+- Implemented data cleaning functions before rendering to handle incomplete backend data.  
+- Checked for `null`, `undefined`, or empty values to prevent frontend crashes.  
+- Added visual warning boxes for medicines with missing data.  
 
 **3. User-friendly data input**  
-- Form to input medicine name and price.  
-- Front-end validation: name must not be empty; price must be a positive number.  
-- Submits data to backend POST `/create` endpoint.  
-- Medicine list updates automatically after adding a new entry.  
+- Added form to input medicine name and price.  
+- Frontend validation: name cannot be empty; price must be a number greater than zero.  
+- Form submits data to backend `POST /create` endpoint.  
+- Medicine list refreshes automatically after adding a new medicine.  
 
-**4. Improve overall design and UX**  
-- Centered cards, form, and search bar for clean layout.  
-- Added hover effects on buttons and cards for better visual feedback.  
-- Colored warnings for missing data.  
-- Search bar lets users find a medicine by name and shows “not found” messages.  
+**4. Extra CRUD features implemented**  
+- **Delete medicine** via `DELETE /delete` endpoint.  
+- **Update medicine price** via `POST /update` endpoint.  
+- **Search medicine** by name via `GET /medicines/{name}` endpoint.  
+- All CRUD actions update the frontend dynamically without needing a page reload.  
+
+**5. Improve overall design and UX**  
+- Styled cards with borders, padding, and hover effects.  
+- Colored warnings for missing or invalid data.  
+- Buttons styled consistently with hover animations.  
+- Search bar provides immediate feedback when searching medicines.  
 
 ## Problems / Challenges  
-- Medicines not displaying initially → fixed by properly creating container and appending elements.  
-- Validation wasn’t strict at first → added checks to prevent empty or invalid entries.  
-- Styling and layout required trial and error to center and align cards/form/search bar.  
+- Medicines not displaying initially → fixed by properly creating the container div and appending elements dynamically.  
+- Frontend crashed when backend returned missing or invalid data → solved by adding data cleaning functions.  
+- Validation errors in the forms → added checks for empty names and invalid prices.  
+- Styling and layout required trial and error to center cards, forms, and search bar.  
+- CORS issues → solved by adding **CORSMiddleware** to backend.  
 
 ## Evaluation  
 - Enjoyed building a full-stack workflow from scratch.  
 - Learned to handle missing data gracefully and connect frontend to backend.  
-- Debugging display issues and adding validation took the most time.  
+- Debugging display issues and adding extra CRUD features took the most time.  
+- Gained confidence in designing and building a complete system manually.  
+- If given more time, I would add pagination, a proper database (SQLite/PostgreSQL), async JSON read/write, and polish the UI with responsive design and animations.  
 
-## Future Improvements  
-- Implement **update and delete functionality** for full CRUD.  
-- Add a **search filter** for faster access to medicines.  
-- Include **pagination** for easier viewing with large datasets.  
-- Use a proper database (like SQLite/PostgreSQL) instead of JSON.  
-- Improve form validation further (regex for names, etc.).  
-- Polish UI with animations and better responsive layout.  
+## Bonus / Extra Features  
+- Deployed backend on **AWS EC2** and connected frontend using an Elastic IP.  
+- Configured backend as a **systemd service with Uvicorn** to ensure it runs continuously.  
+- Delete, Update, and Search functionalities beyond the basic objective.  
+- Live refresh of medicines list after each action.  
+- Data cleaning system for missing or invalid backend values.  
+- Hover animations and visual highlights for warnings.  
 
-## Bonus / Extra  
-- Live updates after adding new medicine.  
-- Search bar shows immediate results.  
-- Visual highlights for missing data.  
-
-
-## Notes 
-- json: lightweight text based structure that allows data to be gathered and transferred between the server and web application
-- data.json: lightweight text based structure that allows information to be read by humans and for the computers to be parsed.
-- Endpoints: any device can connect to a network and exchange information
+## Steps  
+- Installed **Python** and **pip** on local machine or server.  
+- Installed backend dependencies: `fastapi`, `uvicorn`, and `python-multipart`.  
+- Navigated to the backend folder with `cd backend/`.  
+- Ran backend locally with `python main.py` to test endpoints.  
+- Connected frontend to backend using `fetch()` in `script.js` with the `/medicines` endpoint.  
+- Created forms for adding medicines and tested live updates.  
+- Implemented delete, update, and search forms connected to their respective backend endpoints.  
+- Verified all CRUD functionality updated the frontend dynamically.  
+- Tested the site thoroughly with valid, missing, and invalid backend data.  
+- Ensured UI was clean, cards displayed correctly, and warnings showed for missing data.  
